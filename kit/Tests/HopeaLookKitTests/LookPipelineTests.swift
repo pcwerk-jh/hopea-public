@@ -1,4 +1,5 @@
-import CoreImage
+@preconcurrency import CoreGraphics
+@preconcurrency import CoreImage
 import Foundation
 import Testing
 @testable import HopeaLookKit

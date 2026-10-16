@@ -20,7 +20,7 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'look-submission')
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build
         run: swift build -c release
       - name: Package the submission

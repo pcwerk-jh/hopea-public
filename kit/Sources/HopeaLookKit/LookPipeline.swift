@@ -1,4 +1,5 @@
-import CoreImage
+@preconcurrency import CoreGraphics
+@preconcurrency import CoreImage
 import CoreImage.CIFilterBuiltins
 
 /// The look pipeline: the single definition of how a look renders, shared by the Hopea app

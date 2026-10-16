@@ -1,6 +1,7 @@
-import CoreImage
+@preconcurrency import CoreGraphics
+@preconcurrency import CoreImage
 import Foundation
-import ImageIO
+@preconcurrency import ImageIO
 
 /// Small renders of an image with each look: look pickers, catalogs, and the hub's previews.
 public struct LookPreviewRenderer: Sendable {

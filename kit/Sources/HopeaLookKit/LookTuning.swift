@@ -1,5 +1,5 @@
-import CoreGraphics
-import CoreImage
+@preconcurrency import CoreGraphics
+@preconcurrency import CoreImage
 
 /// The constants that define how grain, halation and vignette render. Part of the format:
 /// changing them changes every look, so they are versioned with the kit (FORMAT.md, "Rendering").

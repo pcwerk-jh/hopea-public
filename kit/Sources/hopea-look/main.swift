@@ -1,8 +1,9 @@
-import CoreImage
+@preconcurrency import CoreGraphics
+@preconcurrency import CoreImage
 import CryptoKit
 import Foundation
 import HopeaLookKit
-import ImageIO
+@preconcurrency import ImageIO
 import UniformTypeIdentifiers
 
 // hopea-look — tools for Hopea look packages. Run `hopea-look help`.
