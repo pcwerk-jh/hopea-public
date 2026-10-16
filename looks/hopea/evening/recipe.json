@@ -1,0 +1,27 @@
+{
+  "recipe": 1,
+  "id": "@hopea/evening",
+  "version": "0.9.0",
+  "name": "Evening Portrait",
+  "description": "Warm highlights and skin with gentle roll-off and moderate grain. For indoor and evening portraits.",
+  "tags": [
+    "portrait",
+    "warm",
+    "low-light"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -8,
+    "saturation": -8,
+    "warmth": 15,
+    "highlights": -25,
+    "shadows": 18,
+    "grain": 28,
+    "fade": 8
+  }
+}

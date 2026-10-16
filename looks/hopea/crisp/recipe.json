@@ -1,0 +1,26 @@
+{
+  "recipe": 1,
+  "id": "@hopea/crisp",
+  "version": "0.9.0",
+  "name": "Crisp Slide",
+  "description": "Clean colour separation, deep blacks, neutral highlights and exceptionally fine grain. For travel and product photos.",
+  "tags": [
+    "crisp",
+    "travel",
+    "clean"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 24,
+    "saturation": 18,
+    "warmth": -3,
+    "highlights": -12,
+    "shadows": -15,
+    "grain": 4
+  }
+}

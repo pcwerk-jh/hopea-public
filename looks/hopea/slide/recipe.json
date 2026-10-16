@@ -1,0 +1,35 @@
+{
+  "recipe": 1,
+  "id": "@hopea/slide",
+  "version": "0.9.0",
+  "name": "Natural Slide",
+  "description": "Faithful colour with slightly stronger greens and blues, neutral whites and skin, and very fine grain. For travel and nature.",
+  "tags": [
+    "natural",
+    "nature",
+    "travel"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 15,
+    "saturation": 12,
+    "highlights": -12,
+    "shadows": -5,
+    "grain": 5
+  },
+  "colors": [
+    {
+      "hue": "green",
+      "saturation": 10
+    },
+    {
+      "hue": "blue",
+      "saturation": 10
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "recipe": 1,
+  "id": "@hopea/surreal",
+  "version": "0.9.0",
+  "name": "Surreal",
+  "description": "Experimental colour: greens turn lavender, yellows turn pink and blues lean cyan. For playful landscapes.",
+  "tags": [
+    "experimental",
+    "surreal",
+    "color"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 15,
+    "saturation": 22,
+    "highlights": -10,
+    "grain": 24,
+    "fade": 8
+  },
+  "colors": [
+    {
+      "hue": "green",
+      "hueShift": 160,
+      "saturation": 10
+    },
+    {
+      "hue": "yellow",
+      "hueShift": -90
+    },
+    {
+      "hue": "blue",
+      "hueShift": -35
+    }
+  ]
+}

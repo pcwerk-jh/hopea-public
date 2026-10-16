@@ -1,0 +1,36 @@
+{
+  "recipe": 1,
+  "id": "@hopea/vintage",
+  "version": "0.9.0",
+  "name": "Rich Vintage",
+  "description": "Strong colour separation with rich reds and blues, deep blacks and very little grain. For colourful landscapes and architecture.",
+  "tags": [
+    "rich",
+    "vintage",
+    "landscape"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 25,
+    "saturation": 32,
+    "warmth": 6,
+    "highlights": -12,
+    "shadows": -10,
+    "grain": 5
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "saturation": 20
+    },
+    {
+      "hue": "blue",
+      "saturation": 18
+    }
+  ]
+}

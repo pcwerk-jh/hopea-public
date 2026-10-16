@@ -1,0 +1,39 @@
+{
+  "recipe": 1,
+  "id": "@hopea/pastel",
+  "version": "0.9.0",
+  "name": "Pastel",
+  "description": "Soft contrast, mint-leaning greens, gentle reds and protected pastel highlights. For outdoor portraits and weddings.",
+  "tags": [
+    "pastel",
+    "wedding",
+    "soft"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -20,
+    "saturation": -18,
+    "warmth": -5,
+    "highlights": -25,
+    "shadows": 20,
+    "grain": 12,
+    "fade": 12
+  },
+  "colors": [
+    {
+      "hue": "green",
+      "hueShift": 25,
+      "saturation": -15,
+      "luminance": 10
+    },
+    {
+      "hue": "red",
+      "saturation": -10
+    }
+  ]
+}

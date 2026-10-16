@@ -1,0 +1,33 @@
+{
+  "recipe": 1,
+  "id": "@hopea/press",
+  "version": "0.9.0",
+  "name": "Classic Press",
+  "description": "Punchy black and white with strong midtones and prominent grain. For documentary and street scenes.",
+  "tags": [
+    "monochrome",
+    "street",
+    "grain"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 40,
+    "saturation": -100,
+    "highlights": -10,
+    "shadows": -25,
+    "grain": 45,
+    "fade": 3
+  },
+  "monochrome": {
+    "mix": {
+      "red": 0.3,
+      "green": 0.59,
+      "blue": 0.11
+    }
+  }
+}

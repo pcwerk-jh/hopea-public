@@ -1,0 +1,32 @@
+{
+  "recipe": 1,
+  "id": "@hopea/studio",
+  "version": "0.9.0",
+  "name": "Studio Mono",
+  "description": "Refined black and white with balanced greys, smooth gradation and minimal grain. For portraits and still life.",
+  "tags": [
+    "monochrome",
+    "portrait",
+    "fine-art"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 18,
+    "saturation": -100,
+    "highlights": -18,
+    "shadows": -5,
+    "grain": 7
+  },
+  "monochrome": {
+    "mix": {
+      "red": 0.3,
+      "green": 0.59,
+      "blue": 0.11
+    }
+  }
+}

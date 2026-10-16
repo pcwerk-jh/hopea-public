@@ -1,0 +1,81 @@
+name: Look submission
+
+# Turns a "Submit a look" issue into a pull request for review.
+# The issue body is untrusted: it only ever reaches the tool through a file, never the shell.
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: intake-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  intake:
+    if: contains(github.event.issue.labels.*.name, 'look-submission')
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: swift build -c release
+      - name: Package the submission
+        id: pack
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
+          if .build/release/hopea-look intake --issue-body "$RUNNER_TEMP/issue.md" --looks looks \
+               > "$RUNNER_TEMP/id.txt" 2> "$RUNNER_TEMP/error.txt"; then
+            echo "id=$(cat "$RUNNER_TEMP/id.txt")" >> "$GITHUB_OUTPUT"
+          else
+            echo "failed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Explain what needs fixing
+        if: steps.pack.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          {
+            echo "Thanks for the submission! We couldn't package it yet:"
+            echo
+            echo '```'
+            cat "$RUNNER_TEMP/error.txt"
+            echo '```'
+            echo
+            echo "Edit this issue to fix it and we'll try again automatically."
+          } > "$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/comment.md"
+          exit 1
+      - name: Validate and render previews
+        env:
+          LOOK_ID: ${{ steps.pack.outputs.id }}
+        run: |
+          .build/release/hopea-look validate looks
+          path="looks/${LOOK_ID#@}/look.hopealook"
+          .build/release/hopea-look render-previews "$path" --reference reference --out previews
+      - uses: actions/upload-artifact@v4
+        with:
+          name: previews
+          path: previews
+      - name: Open a pull request for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          LOOK_ID: ${{ steps.pack.outputs.id }}
+        run: |
+          branch="submission/issue-$ISSUE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add looks
+          git commit -m "Add look $LOOK_ID (submitted in #$ISSUE)"
+          git push --force origin "$branch"
+          gh pr create --head "$branch" --title "Add look $LOOK_ID" \
+            --body "Submitted in #$ISSUE. Previews are attached to the intake run. Closes #$ISSUE." || true
+          gh issue comment "$ISSUE" --body "Thanks! Your look is packaged as \`$LOOK_ID\` and is waiting for review."

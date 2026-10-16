@@ -1,0 +1,100 @@
+name: Submit a look
+description: Share a look with the Hopea community. No git needed — fill this in and attach your LUT.
+title: "Look submission: "
+labels: ["look-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing a look! Fill in the fields below and attach your `.cube` LUT
+        (17³, 33³ or 64³, Display P3). We'll package it, render previews and review it.
+        If GitHub won't accept the `.cube` file, rename it to `.txt` first.
+        See [CONTRIBUTING.md](https://github.com/pcwerk-jh/hopea-public/blob/main/CONTRIBUTING.md) for details.
+  - type: input
+    id: name
+    attributes:
+      label: Look name
+      description: Up to 40 characters.
+      placeholder: Harbor Fog
+    validations:
+      required: true
+  - type: input
+    id: handle
+    attributes:
+      label: Creator handle
+      description: Lowercase letters, digits and dashes. Your looks appear as @handle/look-name.
+      placeholder: jane
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Your name
+      description: Shown as the look's creator.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link (optional)
+      description: An https:// link to your site or profile.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What the look feels like and when to use it (up to 500 characters).
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated, e.g. "warm, film, portrait".
+  - type: dropdown
+    id: license
+    attributes:
+      label: Licence
+      description: CC BY 4.0 — people must credit you. CC0 — no conditions.
+      options:
+        - CC-BY-4.0
+        - CC0-1.0
+    validations:
+      required: true
+  - type: textarea
+    id: lut
+    attributes:
+      label: LUT file (.cube)
+      description: Drag your .cube file here.
+    validations:
+      required: true
+  - type: input
+    id: grain
+    attributes:
+      label: Grain (0–1)
+      placeholder: "0.3"
+  - type: input
+    id: vignette
+    attributes:
+      label: Vignette (0–1)
+      placeholder: "0.2"
+  - type: input
+    id: halation
+    attributes:
+      label: Halation (0–1)
+      placeholder: "0"
+  - type: checkboxes
+    id: monochrome
+    attributes:
+      label: Monochrome
+      options:
+        - label: This is a black-and-white look
+  - type: input
+    id: remix
+    attributes:
+      label: Remix of (optional)
+      description: If you started from another look, its id and version, e.g. @hopea/harbor@0.9.0.
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Agreement
+      options:
+        - label: I made this look (or have the right to share it) and agree to publish it under the licence above.
+          required: true

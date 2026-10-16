@@ -1,0 +1,34 @@
+{
+  "recipe": 1,
+  "id": "@hopea/instant",
+  "version": "0.9.0",
+  "name": "Instant",
+  "description": "Lifted blacks, soft contrast and warm highlights, like an instant print. For memories and artistic snapshots.",
+  "tags": [
+    "instant",
+    "nostalgic",
+    "soft"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -25,
+    "saturation": -15,
+    "warmth": 20,
+    "highlights": -30,
+    "shadows": 22,
+    "grain": 18,
+    "fade": 35,
+    "vignette": 15
+  },
+  "splitTone": {
+    "highlights": {
+      "hue": 40,
+      "amount": 15
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "recipe": 1,
+  "id": "@hopea/gritty",
+  "version": "0.9.0",
+  "name": "Gritty Night",
+  "description": "High-contrast black and white with heavy grain and deep shadows. For concerts and night streets.",
+  "tags": [
+    "monochrome",
+    "night",
+    "grain"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 45,
+    "saturation": -100,
+    "highlights": -12,
+    "shadows": -22,
+    "grain": 70,
+    "fade": 5
+  },
+  "monochrome": {
+    "mix": {
+      "red": 0.3,
+      "green": 0.59,
+      "blue": 0.11
+    }
+  }
+}

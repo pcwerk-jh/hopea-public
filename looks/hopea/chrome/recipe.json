@@ -1,0 +1,44 @@
+{
+  "recipe": 1,
+  "id": "@hopea/chrome",
+  "version": "0.9.0",
+  "name": "Muted Chrome",
+  "description": "Restrained, editorial colour: muted cyan-leaning blues, calm reds and cool shadows. For cities, architecture and the street.",
+  "tags": [
+    "muted",
+    "street",
+    "cool"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 12,
+    "saturation": -22,
+    "warmth": -6,
+    "highlights": -12,
+    "shadows": -8,
+    "grain": 12,
+    "fade": 7
+  },
+  "colors": [
+    {
+      "hue": "blue",
+      "saturation": -20,
+      "hueShift": -10
+    },
+    {
+      "hue": "red",
+      "saturation": -12
+    }
+  ],
+  "splitTone": {
+    "shadows": {
+      "hue": 200,
+      "amount": 20
+    }
+  }
+}

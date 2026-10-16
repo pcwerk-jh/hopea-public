@@ -1,0 +1,38 @@
+{
+  "recipe": 1,
+  "id": "@hopea/cinemono",
+  "version": "0.9.0",
+  "name": "Cinematic Mono",
+  "description": "Black and white with warm highlights, strong midtone contrast, deep blacks and organic grain. For candid portraits and documentary work.",
+  "tags": [
+    "monochrome",
+    "cinematic",
+    "portrait"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 30,
+    "saturation": -100,
+    "warmth": 8,
+    "highlights": -15,
+    "shadows": -15,
+    "grain": 32,
+    "fade": 5,
+    "vignette": 8
+  },
+  "monochrome": {
+    "mix": {
+      "red": 0.38,
+      "green": 0.42,
+      "blue": 0.2
+    },
+    "shadowTone": "#191B1D",
+    "highlightTone": "#F6EBDD",
+    "toning": 0.12
+  }
+}

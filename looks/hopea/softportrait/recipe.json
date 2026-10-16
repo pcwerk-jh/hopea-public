@@ -1,0 +1,37 @@
+{
+  "recipe": 1,
+  "id": "@hopea/softportrait",
+  "version": "0.9.0",
+  "name": "Soft Portrait",
+  "description": "Soft highlight roll-off, gentle greens and warm, flattering skin with fine grain. For portraits and travel.",
+  "tags": [
+    "portrait",
+    "soft",
+    "warm"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -12,
+    "saturation": -12,
+    "warmth": 12,
+    "highlights": -25,
+    "shadows": 15,
+    "grain": 16,
+    "fade": 8
+  },
+  "colors": [
+    {
+      "hue": "green",
+      "saturation": -10
+    },
+    {
+      "hue": "orange",
+      "saturation": 5
+    }
+  ]
+}

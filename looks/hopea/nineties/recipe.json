@@ -1,0 +1,43 @@
+{
+  "recipe": 1,
+  "id": "@hopea/nineties",
+  "version": "0.9.0",
+  "name": "Nineties",
+  "description": "Everyday film colour: lively greens and reds, subtle cyan shadows and medium grain. For casual travel and family snapshots.",
+  "tags": [
+    "film",
+    "everyday",
+    "nostalgic"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 12,
+    "saturation": 14,
+    "warmth": -8,
+    "highlights": -10,
+    "shadows": 2,
+    "grain": 25,
+    "fade": 10
+  },
+  "colors": [
+    {
+      "hue": "green",
+      "saturation": 15
+    },
+    {
+      "hue": "red",
+      "saturation": 10
+    }
+  ],
+  "splitTone": {
+    "shadows": {
+      "hue": 190,
+      "amount": 12
+    }
+  }
+}

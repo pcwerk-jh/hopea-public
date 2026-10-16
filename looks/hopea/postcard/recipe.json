@@ -1,0 +1,48 @@
+{
+  "recipe": 1,
+  "id": "@hopea/postcard",
+  "version": "0.9.0",
+  "name": "Postcard",
+  "description": "Classic travel colour: strong reds and blues, deep darks, warm highlights, cooler shadows and a crisp curve. For vintage travel and street scenes.",
+  "tags": [
+    "vintage",
+    "travel",
+    "classic"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 28,
+    "saturation": 24,
+    "warmth": 10,
+    "highlights": -8,
+    "shadows": -20,
+    "grain": 14,
+    "fade": 3
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "saturation": 15
+    },
+    {
+      "hue": "blue",
+      "saturation": 15,
+      "luminance": -10
+    }
+  ],
+  "splitTone": {
+    "shadows": {
+      "hue": 210,
+      "amount": 15
+    },
+    "highlights": {
+      "hue": 40,
+      "amount": 10
+    }
+  }
+}

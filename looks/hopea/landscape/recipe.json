@@ -1,0 +1,39 @@
+{
+  "recipe": 1,
+  "id": "@hopea/landscape",
+  "version": "0.9.0",
+  "name": "Vivid Landscape",
+  "description": "Saturated blues and greens, deep skies and crisp separation with almost no grain. For forests, mountains and sunsets.",
+  "tags": [
+    "vivid",
+    "landscape",
+    "nature"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 30,
+    "saturation": 40,
+    "highlights": -10,
+    "shadows": -18,
+    "grain": 5
+  },
+  "colors": [
+    {
+      "hue": "blue",
+      "saturation": 25
+    },
+    {
+      "hue": "green",
+      "saturation": 20
+    },
+    {
+      "hue": "aqua",
+      "saturation": 15
+    }
+  ]
+}

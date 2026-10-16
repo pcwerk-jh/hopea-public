@@ -1,0 +1,44 @@
+{
+  "recipe": 1,
+  "id": "@hopea/neon",
+  "version": "0.9.0",
+  "name": "Neon Night",
+  "description": "Night-time cinema: red-orange glow around bright lights, cyan-blue shadows and preserved reds and ambers. For cities after dark.",
+  "tags": [
+    "night",
+    "cinematic",
+    "neon"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 22,
+    "saturation": 8,
+    "warmth": -22,
+    "highlights": -30,
+    "shadows": -12,
+    "grain": 30,
+    "fade": 5,
+    "halation": 35
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "saturation": 10
+    },
+    {
+      "hue": "orange",
+      "saturation": 10
+    }
+  ],
+  "splitTone": {
+    "shadows": {
+      "hue": 195,
+      "amount": 30
+    }
+  }
+}

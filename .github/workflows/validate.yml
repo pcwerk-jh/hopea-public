@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build
+        run: swift build -c release
+      - name: Test the look kit
+        run: swift test
+      - name: Validate every look
+        run: .build/release/hopea-look validate looks
+      - name: Check looks match their recipes
+        run: .build/release/hopea-look bake-all looks --check
+      - name: Render previews of changed looks
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git diff --name-only "$BASE"...HEAD -- 'looks/**/*.hopealook' | while read -r file; do
+            [ -f "$file" ] || continue
+            dir="${file#looks/}"
+            .build/release/hopea-look render-previews "$file" --reference reference --out "previews/${dir%/*}"
+          done
+      - name: Upload previews
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: previews
+          path: previews
+          if-no-files-found: ignore

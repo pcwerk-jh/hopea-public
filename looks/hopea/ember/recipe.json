@@ -1,0 +1,42 @@
+{
+  "recipe": 1,
+  "id": "@hopea/ember",
+  "version": "0.9.0",
+  "name": "Ember",
+  "description": "Experimental warmth: muted blues, amber midtones, golden highlights and deep red shadows. For dramatic colour effects.",
+  "tags": [
+    "experimental",
+    "warm",
+    "red"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 20,
+    "saturation": -45,
+    "warmth": 45,
+    "highlights": -12,
+    "shadows": -10,
+    "grain": 28,
+    "fade": 15
+  },
+  "channelGain": {
+    "red": 1.0,
+    "green": 0.78,
+    "blue": 0.4
+  },
+  "splitTone": {
+    "highlights": {
+      "hue": 40,
+      "amount": 45
+    },
+    "shadows": {
+      "hue": 8,
+      "amount": 40
+    }
+  }
+}

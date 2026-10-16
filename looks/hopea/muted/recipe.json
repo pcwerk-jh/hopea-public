@@ -1,0 +1,33 @@
+{
+  "recipe": 1,
+  "id": "@hopea/muted",
+  "version": "0.9.0",
+  "name": "Muted Cinema",
+  "description": "Low contrast and quiet colour with strong highlight compression, lifted shadows and a cool undertone. For cinematic stills.",
+  "tags": [
+    "muted",
+    "cinematic",
+    "soft"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -25,
+    "saturation": -25,
+    "warmth": -4,
+    "highlights": -35,
+    "shadows": 22,
+    "grain": 8,
+    "fade": 12
+  },
+  "splitTone": {
+    "shadows": {
+      "hue": 200,
+      "amount": 12
+    }
+  }
+}

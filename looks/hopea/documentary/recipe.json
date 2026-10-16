@@ -1,0 +1,44 @@
+{
+  "recipe": 1,
+  "id": "@hopea/documentary",
+  "version": "0.9.0",
+  "name": "Vivid Documentary",
+  "description": "Rich reds, yellows and blues with protected skin tones, gentle warmth and deep, detailed shadows. For travel and cultural portraits.",
+  "tags": [
+    "vivid",
+    "travel",
+    "documentary"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 20,
+    "saturation": 24,
+    "warmth": 12,
+    "highlights": -10,
+    "shadows": -8,
+    "grain": 8
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "saturation": 20
+    },
+    {
+      "hue": "yellow",
+      "saturation": 18
+    },
+    {
+      "hue": "blue",
+      "saturation": 20
+    },
+    {
+      "hue": "orange",
+      "saturation": -8
+    }
+  ]
+}

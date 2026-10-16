@@ -1,0 +1,43 @@
+{
+  "recipe": 1,
+  "id": "@hopea/golden",
+  "version": "0.9.0",
+  "name": "Golden Days",
+  "description": "Golden-yellow highlights, warm skin and lively reds and yellows with fine grain. For sunny travel and family photos.",
+  "tags": [
+    "warm",
+    "golden",
+    "nostalgic"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": 8,
+    "saturation": 14,
+    "warmth": 22,
+    "highlights": -15,
+    "shadows": 8,
+    "grain": 18,
+    "fade": 12
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "saturation": 10
+    },
+    {
+      "hue": "yellow",
+      "saturation": 15
+    }
+  ],
+  "splitTone": {
+    "highlights": {
+      "hue": 45,
+      "amount": 20
+    }
+  }
+}
