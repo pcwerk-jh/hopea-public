@@ -12,11 +12,10 @@ The public home of the [Hopea](https://pcwerk-jh.github.io/hopea-public/) camera
 
 | Path | Contents |
 |---|---|
-| `looks/` | Every published look: `looks/<handle>/<look>/look.hopealook` (+ `recipe.json` for recipe-made looks) |
+| `looks/` | Every published look: `looks/<handle>/<look>/look.hopealook` (+ `recipe.json` for recipe-made looks; every `@hopea` look has one) |
 | `site/` | The website template (static; built and published to GitHub Pages) |
 | `kit/` | **HopeaLookKit** (format, validation, rendering) and the `hopea-look` command-line tool |
 | `reference/` | Photos used to render look previews |
-| `tools/` | Generator for the placeholder LUTs of the default looks |
 | `Package.swift` | Swift package manifest (at the root so apps can depend on this repository) |
 
 ## A look is data, not code
@@ -52,7 +51,7 @@ swift run hopea-look build-catalog --looks looks --reference reference --site si
 
 ## Licences
 
-- Code (`kit/`, `site/`, `tools/`, workflows): [MIT](LICENSE).
+- Code (`kit/`, `site/`, workflows): [MIT](LICENSE).
 - Looks: each look's own licence, recorded in its file — CC BY 4.0 or CC0 1.0.
   The default `@hopea/*` looks are CC BY 4.0.
 - Reference photos: see [reference/README.md](reference/README.md).

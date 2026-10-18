@@ -1,0 +1,44 @@
+{
+  "recipe": 1,
+  "id": "@hopea/americana",
+  "version": "1.0.0",
+  "name": "Americana",
+  "description": "Warm highlights, faded blues, slightly lifted blacks, road-trip feel.",
+  "tags": [
+    "warm",
+    "faded",
+    "film"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "exposure": 0.1,
+    "contrast": -11,
+    "saturation": -11,
+    "warmth": 26,
+    "tint": -8,
+    "highlights": 14,
+    "shadows": -10,
+    "grain": 35,
+    "fade": 26,
+    "vignette": 25,
+    "halation": 35
+  },
+  "colors": [
+    {
+      "hue": "blue",
+      "saturation": -22,
+      "luminance": -36
+    }
+  ],
+  "splitTone": {
+    "highlights": {
+      "hue": 45,
+      "amount": 58
+    }
+  }
+}

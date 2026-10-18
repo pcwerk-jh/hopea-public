@@ -1,0 +1,39 @@
+{
+  "recipe": 1,
+  "id": "@hopea/harbor",
+  "version": "1.0.0",
+  "name": "Harbor",
+  "description": "Muted, desaturated cool tones; teal shadows, soft contrast.",
+  "tags": [
+    "cool",
+    "muted",
+    "teal"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "contrast": -15,
+    "saturation": -35,
+    "warmth": -38,
+    "tint": 8,
+    "grain": 30,
+    "fade": 24,
+    "vignette": 20
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "luminance": 11
+    }
+  ],
+  "splitTone": {
+    "shadows": {
+      "hue": 203,
+      "amount": 63
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "recipe": 1,
+  "id": "@hopea/hopea",
+  "version": "1.0.0",
+  "name": "Hopea",
+  "description": "Signature look. Soft Nordic light: cool-neutral, gentle highlight roll-off, true skin tones, slightly lifted shadows.",
+  "tags": [
+    "natural",
+    "cool",
+    "soft"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "exposure": 0.05,
+    "contrast": -5,
+    "saturation": -8,
+    "warmth": -21,
+    "tint": 6,
+    "highlights": 2,
+    "shadows": -7,
+    "grain": 25,
+    "fade": 10,
+    "vignette": 15,
+    "halation": 20
+  },
+  "colors": [
+    {
+      "hue": "red",
+      "luminance": 16
+    },
+    {
+      "hue": "orange",
+      "luminance": 7
+    },
+    {
+      "hue": "blue",
+      "luminance": 6
+    }
+  ]
+}

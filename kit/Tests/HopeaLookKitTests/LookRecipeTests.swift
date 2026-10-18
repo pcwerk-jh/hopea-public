@@ -89,6 +89,40 @@ struct LookRecipeTests {
         #expect(throws: LookRecipe.BakeError.self) { try recipe { $0.recipe = 2 }.bake() }
     }
 
+    @Test("The table for Core Image matches the saved .cube text")
+    func cubeMatchesText() throws {
+        let r = recipe { $0.controls.contrast = 30; $0.controls.warmth = -20; $0.colors = [.init(hue: .blue, saturation: -40)] }
+        let direct = r.cube(dimension: 17)
+        let parsed = try CubeParser.parse(r.cubeText(dimension: 17))
+        #expect(direct.dimension == parsed.dimension && direct.data == parsed.data)
+    }
+
+    @Test("A recipe on a base table: neutral keeps the base, an identity base keeps the recipe")
+    func layeredOnBase() throws {
+        let warm = recipe { $0.controls.warmth = 60; $0.controls.fade = 20 }
+        let base = warm.cube(dimension: 17)
+        let neutralOnBase = recipe().cube(dimension: 17, base: base)
+        #expect(neutralOnBase.data == base.data)
+        let identity = recipe().cube(dimension: 17)
+        let warmOnIdentity = warm.cube(dimension: 17, base: identity)
+        #expect(warmOnIdentity.data == base.data)
+        // Layered: the recipe moves the base's output further.
+        let cooler = recipe { $0.controls.warmth = -60 }
+        let layered = cooler.cube(dimension: 17, base: base)
+        #expect(layered.data != base.data)
+        let manifest = try cooler.bake(base: base, baseIsMonochrome: true)
+        #expect(manifest.monochrome)
+        #expect(try CubeParser.parse(manifest.lut.cube).data == layered.data)
+    }
+
+    @Test("Neutral recipes are recognised")
+    func neutralRecipe() {
+        #expect(recipe().isNeutral)
+        #expect(!recipe { $0.controls.grain = 10 }.isNeutral)
+        #expect(!recipe { $0.colors = [.init(hue: .red, luminance: 5)] }.isNeutral)
+        #expect(recipe { $0.colors = [.init(hue: .red)] }.isNeutral)
+    }
+
     @Test("Every committed recipe bakes to its committed look")
     func committedRecipes() throws {
         let root = URL(filePath: #filePath).deletingLastPathComponent()

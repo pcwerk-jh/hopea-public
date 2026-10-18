@@ -46,7 +46,7 @@ public struct LookRecipe: Codable, Equatable, Sendable {
         public enum Hue: String, Codable, Sendable, CaseIterable {
             case red, orange, yellow, green, aqua, blue, purple, magenta
 
-            var degrees: Double {
+            public var degrees: Double {
                 switch self {
                 case .red: 0
                 case .orange: 30
@@ -64,17 +64,34 @@ public struct LookRecipe: Codable, Equatable, Sendable {
         public var saturation: Double? // −100…+100
         public var hueShift: Double?   // degrees, −180…+180
         public var luminance: Double?  // −100…+100
+
+        public init(hue: Hue, saturation: Double? = nil, hueShift: Double? = nil, luminance: Double? = nil) {
+            self.hue = hue
+            self.saturation = saturation
+            self.hueShift = hueShift
+            self.luminance = luminance
+        }
     }
 
     /// A colour pushed into shadows or highlights.
     public struct Tone: Codable, Equatable, Sendable {
         public var hue: Double     // degrees
         public var amount: Double  // 0…100
+
+        public init(hue: Double, amount: Double) {
+            self.hue = hue
+            self.amount = amount
+        }
     }
 
     public struct SplitTone: Codable, Equatable, Sendable {
         public var shadows: Tone?
         public var highlights: Tone?
+
+        public init(shadows: Tone? = nil, highlights: Tone? = nil) {
+            self.shadows = shadows
+            self.highlights = highlights
+        }
     }
 
     /// Black-and-white conversion with an optional duotone.
@@ -83,12 +100,25 @@ public struct LookRecipe: Codable, Equatable, Sendable {
             public var red: Double
             public var green: Double
             public var blue: Double
+
+            public init(red: Double, green: Double, blue: Double) {
+                self.red = red
+                self.green = green
+                self.blue = blue
+            }
         }
 
         public var mix: Mix
         public var shadowTone: String?     // "#RRGGBB"
         public var highlightTone: String?  // "#RRGGBB"
         public var toning: Double?         // 0…1
+
+        public init(mix: Mix, shadowTone: String? = nil, highlightTone: String? = nil, toning: Double? = nil) {
+            self.mix = mix
+            self.shadowTone = shadowTone
+            self.highlightTone = highlightTone
+            self.toning = toning
+        }
     }
 
     /// Per-channel gain applied in linear light (e.g. suppressing blue for a redscale look).
@@ -96,6 +126,12 @@ public struct LookRecipe: Codable, Equatable, Sendable {
         public var red: Double
         public var green: Double
         public var blue: Double
+
+        public init(red: Double, green: Double, blue: Double) {
+            self.red = red
+            self.green = green
+            self.blue = blue
+        }
     }
 
     public var recipe: Int
@@ -188,13 +224,18 @@ public struct LookRecipe: Codable, Equatable, Sendable {
 
     /// The `.cube` text for the baked LUT (gamma-encoded Display P3 in and out).
     public func cubeText(dimension: Int) -> String {
+        cubeText(dimension: dimension, base: nil)
+    }
+
+    /// The `.cube` text with `base` (another look's table) applied before this recipe.
+    public func cubeText(dimension: Int, base: LookCube?) -> String {
         var out = "TITLE \"\(name)\"\n# Baked from recipe \(id) \(version) by HopeaLookKit\nLUT_3D_SIZE \(dimension)\n"
         out.reserveCapacity(dimension * dimension * dimension * 26 + 100)
         let n = Double(dimension - 1)
         for b in 0..<dimension {
             for g in 0..<dimension {
                 for r in 0..<dimension {
-                    let c = apply(RGB(Double(r) / n, Double(g) / n, Double(b) / n))
+                    let c = output(RGB(Double(r) / n, Double(g) / n, Double(b) / n), base: base)
                     out += "\(Self.format(c.r)) \(Self.format(c.g)) \(Self.format(c.b))\n"
                 }
             }
@@ -202,7 +243,12 @@ public struct LookRecipe: Codable, Equatable, Sendable {
         return out
     }
 
-    private static func format(_ v: Double) -> String {
+    /// One grid point of the table: the base look (if any), then this recipe.
+    func output(_ input: RGB, base: LookCube?) -> RGB {
+        apply(base.map { $0.sample(input) } ?? input)
+    }
+
+    static func format(_ v: Double) -> String {
         String(format: "%.5f", min(max(v, 0), 1))
     }
 

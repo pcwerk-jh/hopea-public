@@ -1,0 +1,34 @@
+{
+  "recipe": 1,
+  "id": "@hopea/silver",
+  "version": "1.0.0",
+  "name": "Silver",
+  "description": "Monochrome; rich midtones, gentle contrast, fine grain.",
+  "tags": [
+    "monochrome",
+    "black-and-white",
+    "film"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Hopea",
+    "handle": "hopea",
+    "url": "https://github.com/pcwerk-jh/hopea-public"
+  },
+  "controls": {
+    "exposure": 0.15,
+    "contrast": 11,
+    "highlights": -16,
+    "shadows": -2,
+    "grain": 50,
+    "fade": 15,
+    "vignette": 25
+  },
+  "monochrome": {
+    "mix": {
+      "red": 0.2,
+      "green": 0.65,
+      "blue": 0.03
+    }
+  }
+}
