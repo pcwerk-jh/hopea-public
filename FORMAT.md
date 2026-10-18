@@ -66,6 +66,10 @@ Every app and tool must render looks the same way (`kit/Sources/HopeaLookKit/Loo
 Sizes (blur radius, vignette radius, grain size) are fractions of the image, so a look renders
 the same at any resolution. The constants are in `LookTuning.swift` and are part of the format.
 
+**Natural** (`@hopea/natural`, `Look.natural`) is built into HopeaLookKit rather than shipped as a
+package: it is no look at all, and the pipeline returns the image unchanged. Libraries built with
+`LookLibrary(_:includingNatural: true)` list it first, and ignore any package that uses its ID.
+
 ## Making the LUT
 
 Export a 3D LUT (`.cube`, 17/33/64 points) from DaVinci Resolve, Lightroom/Photoshop, Affinity,

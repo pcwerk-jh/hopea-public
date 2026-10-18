@@ -96,4 +96,15 @@ struct LookPipelineTests {
         let maxDiff = zip(a, b).map { abs($0 - $1) }.max() ?? 0
         #expect(maxDiff < 0.01)
     }
+
+    @Test("Natural is no look at all: the image comes back unchanged, and it's first in a library")
+    func natural() throws {
+        let image = try Self.reference("sample_bronco", maxSide: 128)
+        let library = LookLibrary(try ["hopea", "silver"].map {
+            try LookPackage.read(contentsOf: Self.root.appending(path: "looks/hopea/\($0)/look.hopealook"))
+        }, includingNatural: true)
+        #expect(library.looks.first == .natural && library.defaultLook == .natural && library.looks.count == 3)
+        let out = LookPipeline(library: library).apply(.natural, to: image, quality: .full, grainSeed: 7)
+        #expect(Self.rgbaf(out) == Self.rgbaf(image))
+    }
 }

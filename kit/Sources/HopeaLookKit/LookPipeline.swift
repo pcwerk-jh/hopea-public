@@ -26,6 +26,8 @@ public struct LookPipeline: Sendable {
     public func apply(_ look: Look, to image: CIImage, quality: LookQuality, grainSeed: UInt32) -> CIImage {
         let extent = image.extent
         guard !extent.isInfinite, !extent.isEmpty else { return image }
+        // Natural is no look at all.
+        if look.isNatural { return image }
         guard let cube = library.cube(for: look) else {
             KitLog.looks.error("No LUT loaded for look \(look.id, privacy: .public); passing image through")
             return image

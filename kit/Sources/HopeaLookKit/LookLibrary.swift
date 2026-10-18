@@ -21,6 +21,13 @@ public final class LookLibrary: Sendable {
         self.init(looks: looks, cubes: cubes)
     }
 
+    /// Builds a library from validated packages with Natural (no look) first.
+    public convenience init(_ loaded: [LoadedLook], includingNatural: Bool) {
+        let library = LookLibrary(loaded)
+        self.init(looks: (includingNatural ? [Look.natural] : []) + library.looks.filter { !$0.isNatural },
+                  cubes: library.cubes)
+    }
+
     public func cube(for look: Look) -> LookCube? { cubes[look.id] }
 
     public func look(withID id: String) -> Look? { looks.first { $0.id == id } }

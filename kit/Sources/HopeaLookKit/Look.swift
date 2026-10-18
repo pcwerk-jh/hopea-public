@@ -49,3 +49,13 @@ public enum LookQuality: Sendable {
 enum KitLog {
     static let looks = Logger(subsystem: "HopeaLookKit", category: "looks")
 }
+
+extension Look {
+    /// Natural: no look at all — the photo as the camera developed it, with no colour change,
+    /// grain, halation or vignette. Every library can include it (first); the pipeline passes
+    /// the image straight through.
+    public static let natural = Look(id: "@hopea/natural", name: "Natural", grain: 0, vignette: 0, halation: 0,
+                                     isMonochrome: false)
+
+    public var isNatural: Bool { id == Look.natural.id }
+}
