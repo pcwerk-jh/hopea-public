@@ -1,10 +1,10 @@
 # Hopea — public
 
-The public home of the [Hopea](https://pcwerk-jh.github.io/hopea-public/) camera app: community
+The public home of the [Hopea](https://rovetravel.github.io/hopea-public/) camera app: community
 **looks**, the **website**, and the open **look kit** that renders them.
 
-- **Browse looks:** https://pcwerk-jh.github.io/hopea-public/
-- **Share a look:** [submit one](https://github.com/pcwerk-jh/hopea-public/issues/new?template=submit-look.yml)
+- **Browse looks:** https://rovetravel.github.io/hopea-public/
+- **Share a look:** [submit one](https://github.com/rovetravel/hopea-public/issues/new?template=submit-look.yml)
   — no git needed — or see [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Look file format:** [FORMAT.md](FORMAT.md)
 
@@ -46,7 +46,7 @@ swift run hopea-look render-previews looks/jane/harbor-fog/look.hopealook --refe
 
 # Build the site exactly as GitHub Pages serves it
 swift run hopea-look build-catalog --looks looks --reference reference --site site --out _site \
-  --base-url https://pcwerk-jh.github.io/hopea-public
+  --base-url https://rovetravel.github.io/hopea-public
 ```
 
 ## Licences

@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BASE_URL: https://pcwerk-jh.github.io/hopea-public
+  BASE_URL: https://rovetravel.github.io/hopea-public
 
 jobs:
   build:

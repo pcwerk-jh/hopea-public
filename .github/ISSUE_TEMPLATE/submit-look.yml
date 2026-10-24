@@ -9,7 +9,7 @@ body:
         Thanks for sharing a look! Fill in the fields below and attach your `.cube` LUT
         (17³, 33³ or 64³, Display P3). We'll package it, render previews and review it.
         If GitHub won't accept the `.cube` file, rename it to `.txt` first.
-        See [CONTRIBUTING.md](https://github.com/pcwerk-jh/hopea-public/blob/main/CONTRIBUTING.md) for details.
+        See [CONTRIBUTING.md](https://github.com/rovetravel/hopea-public/blob/main/CONTRIBUTING.md) for details.
   - type: input
     id: name
     attributes:

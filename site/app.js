@@ -1,7 +1,7 @@
 // Hopea Looks site. Reads catalog.json and renders pages with DOM APIs only:
 // community text is always inserted as text, never as HTML.
 
-const REPO = "https://github.com/pcwerk-jh/hopea-public";
+const REPO = "https://github.com/rovetravel/hopea-public";
 const SUBMIT_URL = `${REPO}/issues/new?template=submit-look.yml`;
 
 async function loadCatalog() {

@@ -5,7 +5,7 @@ before it's published.
 
 ## Three ways to submit
 
-1. **Submission form (no git needed).** [Open the form](https://github.com/pcwerk-jh/hopea-public/issues/new?template=submit-look.yml),
+1. **Submission form (no git needed).** [Open the form](https://github.com/rovetravel/hopea-public/issues/new?template=submit-look.yml),
    fill in the details and attach your `.cube` file (rename it to `.txt` if GitHub won't accept
    it). A bot packages it, renders previews and opens a pull request for review. If something
    needs fixing it comments on your submission — edit it and it tries again. You need a free
